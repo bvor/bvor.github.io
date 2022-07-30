@@ -187,24 +187,20 @@
     
 </style>
 
-
-
-
-
     <script>
-      function initMap()
-      {
-        var location={lat: 33.463731, lng:-88.817269};
-        var map= new google.maps.Map(document.getElementById("map"),{
-          zoom:4,
-          center:location});
-    }
-    {
-    var marker= new google.maps.Marker({
-          postion: location,
-        map: map
-      });
-    }
+      function initMap() {
+    var coordinates = { lat: 33.463731, lng: -88.817269};
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center: coordinates,
+        scrollwheel: false
+    });
+    var marker = new google.maps.Marker({
+        position: coordinates,
+        map: map,
+        label: "1120 E LEE BLVD"
+    });
+  }
     </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHdFfPOpebtjN4fBBvzE4GXE4ZmEaFXNk&callback=initMap">
