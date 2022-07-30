@@ -107,17 +107,23 @@
   </div>
 </div>
 <div class="section" id="contact">
-  <div class="cc-contact-information" style="background-image: url('images/staticmap.png')">
-    <div class="container">
-      <div class="cc-contact">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="card mb-0" data-aos="zoom-in">
-              <div class="h4 text-center title">Contact Me</div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <form action="https://formspree.io/bibhor.np@gmail.com" method="POST">
+  
+  <div class="cc-contact-information">
+    <div id="map" style="z-index: 1; position: absolute; top: 0; left: 0;">
+    </div>
+
+    
+
+      <div class="container" style="z-index: 2; position: relative; top: 0; left: 0;">
+        <div class="cc-contact">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="card mb-0" data-aos="zoom-in">
+                <div class="h4 text-center title">Contact Me</div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card-body">
+                      <form action="https://formspree.io/bibhor.np@gmail.com" method="POST">
                       <div class="p pb-3"><strong>Feel free to contact me </strong></div>
                       <div class="row mb-3">
                         <div class="col">
@@ -168,14 +174,44 @@
           </div>
         </div>
       </div>
-    </div>
+    
+  </div>
   </div>
 </div>
         
+<style>
+  #map{
+    height: 650px;
+    width: 100%;
+  }
+    
+</style>
 
-</div>
-    </div>
-   
+
+
+
+
+    <script>
+      function initMap()
+      {
+        var location={lat: 33.463731, lng:-88.817269};
+        var map= new google.maps.Map(document.getElementById("map"),{
+          zoom:4,
+          center:location});
+    }
+    {
+    var marker= new google.maps.Marker({
+          postion: location,
+        map: map
+      });
+    }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHdFfPOpebtjN4fBBvzE4GXE4ZmEaFXNk&callback=initMap">
+    </script>
+
+
+
     <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
     <script src="js/core/popper.min.js?ver=1.1.0"></script>
     <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
@@ -183,7 +219,7 @@
     <script src="js/aos.js?ver=1.1.0"></script>
     <script src="scripts/main.js?ver=1.1.0"></script>
     <script src="app.js"></script> 
-  </body>
+  
   
 
 </html>
